@@ -8,6 +8,9 @@ const RList = ({ list }) => (
     <List
     size="large"
     dataSource={list}
+    pagination={{
+      pageSize: 12,
+    }}
     grid={{ gutter: 40,
       xs: 1,
       sm: 2,
