@@ -13,6 +13,7 @@ const mapState = state => {
 const mapDispatch = dispatch => {
     return {
         orderByChange: (e) => dispatch(actions.orderByChange(e.target.value)),
+        orderDirectionChange: (e) => dispatch(actions.orderDirectionChange(e.target.value)),
     }
 }
 
