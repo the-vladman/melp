@@ -4,6 +4,7 @@ import { Layout, Row, Col } from 'antd';
 
 import './App.css';
 import RcList from './containers/RcList';
+import RcOrderControl from './containers/RcOrderControl';
 import { actions } from './state/actions';
 
 const { Header, Content } = Layout;
@@ -27,6 +28,11 @@ class App extends Component {
       <Layout>
         <Header>Header</Header>
         <Content style={{ margin: 24, }}>
+          <Row gutter={40}>
+            <Col span={10}>
+              <RcOrderControl/>
+            </Col>
+          </Row>
           <Row gutter={40}>
             <Col span={24}>
               <RcList/>
