@@ -1,33 +1,29 @@
 import { connect } from 'react-redux'
 import { RList } from '../components';
-import { actions } from '../state/actions';
+import _ from 'lodash';
 
-const orderAlpha = (list) => list.sort((a, b) => a.name.localeCompare(b.name));
+const orderAlpha = (list, order) => _.orderBy(list, 'name', order);
 
-const orderRate = (list) => list.sort((a, b) => a.rating - b.rating);
+const orderRate = (list, order) => _.orderBy(list, 'rating', order);
 
 const listOrderBy = (restaurants, orderBy, orderDirection) => {
-    let list  = []
     switch (orderBy) {
         case 0:
-            list = orderAlpha(restaurants);
-            break;
-        
+            return orderAlpha(restaurants, orderDirection);
+
         case 1:
-            list = orderRate(restaurants);
-            break;
-    
+            return orderRate(restaurants, orderDirection);
+
         default:
-            list = restaurants;
-            break;
+            return restaurants;
     }
-    return orderDirection === 1 ? list.reverse() : list;
 }
 
 const mapState = state => {
     const { restaurants, orderBy, orderDirection } = state;
+    const list = listOrderBy(restaurants, orderBy, orderDirection);
     return {
-        list: listOrderBy(restaurants, orderBy, orderDirection),
+        list
     }
 }
 
