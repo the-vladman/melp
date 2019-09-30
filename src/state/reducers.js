@@ -3,7 +3,7 @@ import { types } from './actions';
 
 const initialState = {
     restaurants: [],
-    orderBy: 1,
+    orderBy: 0,
     orderDirection: 0
 };
 
@@ -15,6 +15,12 @@ const melpApp = (state = initialState, action) => {
                 ...state,
                 restaurants: action.restaurants
             }
+
+        case types.CHANGE_ORDERBY:
+                return {
+                    ...state,
+                    orderBy: action.option
+                }
 
         default:
             return state
