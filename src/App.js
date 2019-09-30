@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Layout, Row, Col, Typography, Icon } from 'antd';
+import { Layout, Row, Col, Typography, Icon, message } from 'antd';
 
 import './App.css';
 import RcList from './containers/RcList';
@@ -23,7 +23,7 @@ class App extends Component {
       const list = await response.json();
       fetchRestaurants(list);
     } catch (error) {
-      console.log(error);
+      message.error('Ups! cannot fetch');
     }    
   }
 
