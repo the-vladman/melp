@@ -11,7 +11,7 @@ const RCard = ({ item }) => (
         <a href={`mailto:${item.contact.email.toLowerCase()}`}><Icon type="mail" /></a>,
         <a><Icon type="phone" /></a>
         ]}
-        extra={<Rate disabled defaultValue={item.rating} />}>
+        extra={<Rate disabled value={item.rating} />}>
         <p><Icon type="compass" /> : {item.address.state}</p>
         <p>{item.address.street}</p>
         <p>{item.address.city}</p>
