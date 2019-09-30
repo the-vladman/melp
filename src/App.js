@@ -9,7 +9,7 @@ import { actions } from './state/actions';
 
 const { Title } = Typography;
 const { Header, Content } = Layout;
-const fetchPath = 'data_melp.json';
+const fetchPath = '/data_melp.json';
 const IconFont = Icon.createFromIconfontCN({
   scriptUrl: '//at.alicdn.com/t/font_1394421_6bzlgwo7j4d.js',
 });
