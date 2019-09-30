@@ -1,8 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { Layout, Row, Col } from 'antd';
+
 import './App.css';
+import RcList from './containers/RcList';
 import { actions } from './state/actions';
 
+const { Header, Content } = Layout;
 const fetchPath = 'data_melp.json';
 
 class App extends Component {
@@ -20,9 +24,16 @@ class App extends Component {
 
   render() {
     return (
-      <div>
-        Melp App
-      </div>
+      <Layout>
+        <Header>Header</Header>
+        <Content style={{ margin: 24, }}>
+          <Row gutter={40}>
+            <Col span={24}>
+              <RcList/>
+            </Col>
+          </Row>
+        </Content>
+      </Layout>
     );
   }
 }
