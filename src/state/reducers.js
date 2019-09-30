@@ -3,6 +3,8 @@ import { types } from './actions';
 
 const initialState = {
     restaurants: [],
+    orderBy: 1,
+    orderDirection: 0
 };
 
 const melpApp = (state = initialState, action) => {
